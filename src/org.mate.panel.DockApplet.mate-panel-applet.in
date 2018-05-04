@@ -2,12 +2,12 @@
 Id=DockAppletFactory
 InProcess=false
 Location=@LOCATION@
-Name=Dock Applet Factory
-Description=An application dock for the MATE panel
+_Name=Dock Applet Factory
+_Description=An application dock for the MATE panel
 
 [DockApplet]
 Name=Dock
-Description=An application dock for the MATE panel
+_Description=An application dock for the MATE panel
 Icon=desktop
 
 

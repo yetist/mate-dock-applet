@@ -43,7 +43,15 @@ else:
     gi.require_version("Gtk", "3.0")
 
 from gi.repository import Gtk, Pango
+import gettext
 
+try:
+    gettext.bindtextdomain(config.GETTEXT_PACKAGE,config.localedir)
+    gettext.textdomain(config.GETTEXT_PACKAGE)
+    GETTEXT_PACKAGE = config.GETTEXT_PACKAGE
+except:
+    GETTEXT_PACKAGE = "dock-applet"
+_ = gettext.gettext
 
 class AboutWindow(Gtk.Window):
     """Provides the About window
@@ -56,16 +64,16 @@ class AboutWindow(Gtk.Window):
         Create the window and its contents
         """
 
-        super().__init__(title="About Dock Applet")
+        super().__init__(title=_("About Dock Applet"))
 
         self.set_position(Gtk.WindowPosition.CENTER_ALWAYS)
         self.set_skip_taskbar_hint(True)  # we don't want to be in the taskbar
 
-        self.__btn_close = Gtk.Button(label="Close", stock=Gtk.STOCK_CLOSE)
+        self.__btn_close = Gtk.Button(label=_("Close"), stock=Gtk.STOCK_CLOSE)
         self.__btn_close.connect("button-press-event", self.close_button_press)
-        self.__btn_hints = Gtk.ToggleButton.new_with_label("Hints & Tips")
+        self.__btn_hints = Gtk.ToggleButton.new_with_label(_("Hints & Tips"))
         self.__btn_hints.connect("toggled", self.hints_button_toggled)
-        self.__btn_license = Gtk.ToggleButton.new_with_label("License")
+        self.__btn_license = Gtk.ToggleButton.new_with_label(_("License"))
         self.__btn_license.connect("toggled", self.license_button_toggled)
 
         self.connect("delete-event", self.win_delete_event)
