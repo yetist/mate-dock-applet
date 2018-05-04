@@ -86,6 +86,15 @@ import docked_app_helpers
 import window_control
 
 from log_it import log_it as log_it
+import gettext
+
+try:
+    gettext.bindtextdomain(config.GETTEXT_PACKAGE,config.localedir)
+    gettext.textdomain(config.GETTEXT_PACKAGE)
+    GETTEXT_PACKAGE = config.GETTEXT_PACKAGE
+except:
+    GETTEXT_PACKAGE = "dock-applet"
+_ = gettext.gettext
 
 class DragMotionTimer(object):
     """Timer to allow us to track mouse motion during a drag and drop
@@ -1344,9 +1353,9 @@ class Dock(object):
 
         num_win = app.get_num_windows()
         if num_win == 1:
-            close_win_action.set_label("Close %s" % app.app_name)
+            close_win_action.set_label(_("Close %s") % app.app_name)
         else:
-            close_win_action.set_label("Close all windows")
+            close_win_action.set_label(_("Close all windows"))
 
         if num_win > 0:
             close_win_action.set_visible(True)
