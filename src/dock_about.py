@@ -45,12 +45,6 @@ else:
 from gi.repository import Gtk, Pango
 import gettext
 
-try:
-    gettext.bindtextdomain(config.GETTEXT_PACKAGE,config.localedir)
-    gettext.textdomain(config.GETTEXT_PACKAGE)
-    GETTEXT_PACKAGE = config.GETTEXT_PACKAGE
-except:
-    GETTEXT_PACKAGE = "dock-applet"
 _ = gettext.gettext
 
 class AboutWindow(Gtk.Window):

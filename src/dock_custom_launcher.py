@@ -52,7 +52,15 @@ else:
 from gi.repository import Gtk, GdkPixbuf
 
 import os
+import gettext
 
+try:
+    gettext.bindtextdomain(config.GETTEXT_PACKAGE,config.localedir)
+    gettext.textdomain(config.GETTEXT_PACKAGE)
+    GETTEXT_PACKAGE = config.GETTEXT_PACKAGE
+except:
+    GETTEXT_PACKAGE = "dock-applet"
+_ = gettext.gettext
 
 class DockCLWindow(Gtk.Window):
     """Class to provide the create custom launcher functionality
@@ -97,13 +105,13 @@ class DockCLWindow(Gtk.Window):
         self.__hbox.set_spacing(2)
         self.__vbox.set_spacing(2)
 
-        self.__btn_help = Gtk.Button(label="Help", stock=Gtk.STOCK_HELP)
+        self.__btn_help = Gtk.Button(label=_("Help"), stock=Gtk.STOCK_HELP)
         self.__btn_help.connect("button-press-event",
                                 self.help_btn_press)
-        self.__btn_cancel = Gtk.Button(label="Cancel", stock=Gtk.STOCK_CANCEL)
+        self.__btn_cancel = Gtk.Button(label=_("Cancel"), stock=Gtk.STOCK_CANCEL)
         self.__btn_cancel.connect("button-press-event",
                                   self.win_cancel_button_press)
-        self.__btn_ok = Gtk.Button(label="Ok", stock=Gtk.STOCK_OK)
+        self.__btn_ok = Gtk.Button(label=_("Ok"), stock=Gtk.STOCK_OK)
         self.__btn_ok.connect("button-press-event", ok_callback)
 
         if not config.WITH_GTK3:
@@ -137,7 +145,7 @@ class DockCLWindow(Gtk.Window):
         self.__btn_icon = Gtk.Button()
         self.__img_icon = Gtk.Image()
         self.__btn_icon.connect("button_press_event", self.img_button_press)
-        self.__btn_icon.set_tooltip_text("Click to select an icon")
+        self.__btn_icon.set_tooltip_text(_("Click to select an icon"))
         self.__btn_icon.add(self.__img_icon)
 
         if not config.WITH_GTK3:

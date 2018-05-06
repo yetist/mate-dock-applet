@@ -88,12 +88,6 @@ import window_control
 from log_it import log_it as log_it
 import gettext
 
-try:
-    gettext.bindtextdomain(config.GETTEXT_PACKAGE,config.localedir)
-    gettext.textdomain(config.GETTEXT_PACKAGE)
-    GETTEXT_PACKAGE = config.GETTEXT_PACKAGE
-except:
-    GETTEXT_PACKAGE = "dock-applet"
 _ = gettext.gettext
 
 class DragMotionTimer(object):
@@ -1320,9 +1314,9 @@ class Dock(object):
             unpin_action.set_visible(app.is_pinned)
 
         if pin_action.is_visible():
-            pin_action.set_label("Pin %s" % app.app_name)
+            pin_action.set_label(_("Pin %s") % app.app_name)
         else:
-            unpin_action.set_label("Unpin %s" % app.app_name)
+            unpin_action.set_label(_("Unpin %s") % app.app_name)
 
         move_up_action = self.dock_action_group.get_action("move_up_action")
         move_down_action = self.dock_action_group.get_action("move_down_action")
@@ -1339,15 +1333,15 @@ class Dock(object):
             move_down_action.set_visible(index < (len(self.box.get_children()))-1)
             move_left_action.set_visible(False)
             move_right_action.set_visible(False)
-            move_up_action.set_label("Move %s up the dock" % app.app_name)
-            move_down_action.set_label("Move %s down the dock" % app.app_name)
+            move_up_action.set_label(_("Move %s up the dock") % app.app_name)
+            move_down_action.set_label(_("Move %s down the dock") % app.app_name)
         else:
             move_up_action.set_visible(False)
             move_down_action.set_visible(False)
             move_left_action.set_visible(index > 0)
             move_right_action.set_visible(index < (len(self.box.get_children()))-1)
-            move_left_action.set_label("Move %s to the left on the dock" % app.app_name)
-            move_right_action.set_label("Move %s to the right on the dock" % app.app_name)
+            move_left_action.set_label(_("Move %s to the left on the dock") % app.app_name)
+            move_right_action.set_label(_("Move %s to the right on the dock") % app.app_name)
 
         # set the actions for selecting specific windows
 
