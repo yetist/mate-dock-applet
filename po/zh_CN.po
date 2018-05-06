@@ -55,12 +55,12 @@ msgstr "点击项目来选择图标"
 #: ../src/dock.py:1310
 #, python-format
 msgid "Pin %s"
-msgstr ""
+msgstr "固定 %s"
 
 #: ../src/dock.py:1312
 #, python-format
 msgid "Unpin %s"
-msgstr ""
+msgstr "解除 %s"
 
 #: ../src/dock.py:1329
 #, python-format
