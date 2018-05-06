@@ -7,32 +7,32 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mate-dock-applet\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-05-06 21:04+0800\n"
+"POT-Creation-Date: 2018-05-06 21:43+0800\n"
 "PO-Revision-Date: 2018-05-06 21:08+0800\n"
+"Last-Translator: yetist <yetist@gmail.com>\n"
+"Language-Team: Chinese\n"
 "Language: zh_CN\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"Last-Translator: yetist <yetist@gmail.com>\n"
-"Language-Team: Chinese\n"
 "X-Generator: Poedit 2.0.6\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 
-#: ../src/dock_about.py:67
+#: ../src/dock_about.py:61
 msgid "About Dock Applet"
 msgstr "关于 Dock Applet"
 
 #. we don't want to be in the taskbar
-#: ../src/dock_about.py:72
+#: ../src/dock_about.py:66
 msgid "Close"
 msgstr "关闭"
 
-#: ../src/dock_about.py:74
+#: ../src/dock_about.py:68
 msgid "Hints & Tips"
 msgstr ""
 
-#: ../src/dock_about.py:76
+#: ../src/dock_about.py:70
 msgid "License"
 msgstr "许可协议"
 
@@ -52,41 +52,65 @@ msgstr "确定"
 msgid "Click to select an icon"
 msgstr "点击项目来选择图标"
 
-#: ../src/dock.py:1317
+#: ../src/dock.py:1310
 #, python-format
 msgid "Pin %s"
 msgstr ""
 
-#: ../src/dock.py:1319
+#: ../src/dock.py:1312
 #, python-format
 msgid "Unpin %s"
 msgstr ""
 
-#: ../src/dock.py:1336
+#: ../src/dock.py:1329
 #, python-format
 msgid "Move %s up the dock"
 msgstr ""
 
-#: ../src/dock.py:1337
+#: ../src/dock.py:1330
 #, python-format
 msgid "Move %s down the dock"
 msgstr ""
 
-#: ../src/dock.py:1343
+#: ../src/dock.py:1336
 #, python-format
 msgid "Move %s to the left on the dock"
 msgstr ""
 
-#: ../src/dock.py:1344
+#: ../src/dock.py:1337
 #, python-format
 msgid "Move %s to the right on the dock"
 msgstr ""
 
-#: ../src/dock.py:1350
+#: ../src/dock.py:1343
 #, python-format
 msgid "Close %s"
-msgstr ""
+msgstr "关闭 %s"
 
-#: ../src/dock.py:1352
+#: ../src/dock.py:1345
 msgid "Close all windows"
 msgstr "关闭所有窗口"
+
+#: ../src/dock.py:1392
+msgid "Move app _right in the dock"
+msgstr ""
+
+#: ../src/dock.py:1395
+msgid "Dock P_references"
+msgstr "Dock 首选项(_P)"
+
+#: ../src/dock.py:1395
+msgid "Dock Preferences"
+msgstr "Dock 首选项"
+
+#: ../src/dock.py:1398
+msgid "Create custo_m launcher for this app"
+msgstr ""
+
+#: ../src/dock.py:1398
+msgid "Create custom launcher for this app"
+msgstr ""
+
+#: ../src/dock.py:1401
+msgid "About..."
+msgstr "关于..."
