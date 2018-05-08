@@ -21,14 +21,14 @@ AC_SUBST(WITH_GTK3)
 dnl ================================================================
 dnl  Language Support
 dnl ================================================================
-IT_PROG_INTLTOOL([0.40.0])
 GETTEXT_PACKAGE=dock-applet
 AC_DEFINE_UNQUOTED([GETTEXT_PACKAGE], ["$GETEX_PACKAGE"], [Define the gettext package to be used])
 AC_SUBST(GETTEXT_PACKAGE)
 AM_GLIB_GNU_GETTEXT
+IT_PROG_INTLTOOL([0.40.0])
 
 m4_pattern_allow([AM_V_GEN])dnl Make autoconf not complain about the rule below
-PANEL_INTLTOOL_MATE_PANEL_APPLET_RULE='%.mate-panel-applet: %.mate-panel-applet.in $(INTLTOOL_MERGE) $(wildcard $(top_srcdir)/po/*.po) ; $(AM_V_GEN) LC_ALL=C $(INTLTOOL_MERGE) -d -u -c $(top_builddir)/po/.intltool-merge-cache $(top_srcdir)/po $< [$]@'
+PANEL_INTLTOOL_MATE_PANEL_APPLET_RULE='%.mate-panel-applet: %.mate-panel-applet.in $(INTLTOOL_MERGE) $(wildcard $(top_srcdir)/po/*.po) ; $(INTLTOOL_V_MERGE)LC_ALL=C $(INTLTOOL_MERGE) $(INTLTOOL_V_MERGE_OPTIONS) -d -u -c $(top_builddir)/po/.intltool-merge-cache $(top_srcdir)/po $< [$]@'
 AC_SUBST([PANEL_INTLTOOL_MATE_PANEL_APPLET_RULE])
 
 

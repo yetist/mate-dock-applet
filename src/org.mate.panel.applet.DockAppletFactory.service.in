@@ -1,3 +1,3 @@
 [D-BUS Service]
-_Name=org.mate.panel.applet.DockAppletFactory
-Exec=/usr/bin/env python3  @LOCATION@
+Name=org.mate.panel.applet.DockAppletFactory
+Exec=/usr/bin/python3 @LOCATION@

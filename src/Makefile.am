@@ -53,6 +53,8 @@ xml_DATA 	 = app_match.xml
 
 @PANEL_INTLTOOL_MATE_PANEL_APPLET_RULE@
 
+@INTLTOOL_DESKTOP_RULE@
+
 @GSETTINGS_RULES@
 
 dock_gschemas_in = org.mate.panel.applet.dock.gschema.xml.in

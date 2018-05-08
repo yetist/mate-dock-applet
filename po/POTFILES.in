@@ -1,3 +1,4 @@
+[encoding: UTF-8]
 src/dock_about.py
 src/dock_action_list.py
 src/dock_applet.py
@@ -14,3 +15,5 @@ src/dock_xml.py
 src/dom_color.py
 src/log_it.py
 src/window_control.py
+src/org.mate.panel.DockApplet.mate-panel-applet
+src/org.mate.panel.applet.DockAppletFactory.service
